@@ -10,6 +10,19 @@ import math
 
 ##--------------------------------------------------------------------------
 
+def openFile(filename):
+    infile = open(filename, "r")
+
+    print("File opened.")
+
+def test_openFile(capsys):
+    openFile("testing.txt")
+
+    captured_stdout, captured_stderr = capsys.readouterr()
+    assert captured_stdout.strip() == "File opened."
+
+##--------------------------------------------------------------------------
+
 ## numbers function below:
 
 def numbers(num1, num2):
