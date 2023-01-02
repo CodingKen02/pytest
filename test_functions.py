@@ -53,6 +53,28 @@ def test_numbers(num1, num2, quotient):
 
 ##--------------------------------------------------------------------------
 
+## dist function below:
+
+def dist(x1, y1, x2, y2):
+    dist = (x2 - x1) ** 2 + (y2 - y1) ** 2
+    dist = math.sqrt(dist)
+
+    return dist
+
+## dist test function with 2 distinct tests (math correctness & data type) below:
+
+## Math Correctness: the last 2 tests-> 5th fails/6th passes
+## Data Types: the first 4 tests-> 1st fails/2nd passes/3rd passes/4th fails
+## (Data Types used: complex numbers/floats & integers/boolean/strings)
+
+@pytest.mark.parametrize("x1, y1, x2, y2, distance", [(10j, 10j, 10j, 10j, 0), (1.0, 1.0, 1, 1, 0.0),
+(True, True, True, True, False), ("one", "one", "one", "one", "zero"), (8, 4, 3, 3, 3), 
+(3, 1, 5, 4, 3.6055512754639892931192212674705)])
+def test_dist(x1, y1, x2, y2, distance):
+    assert dist(x1, y1, x2, y2) == distance
+
+##--------------------------------------------------------------------------
+
 ## below are the functions to test
 
 """
@@ -72,6 +94,7 @@ def openFile(filename):
 def numbers(num1, num2):
     return num1 / num2
 
+## COMPLETED -------------------------------------------------------------KK
 ## takes in two points
 ## finds the distance between the points
 def dist(x1, y1, x2, y2):
