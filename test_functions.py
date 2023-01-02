@@ -1,5 +1,5 @@
-""""
-Created by: Kennedy Keyes and Javier Davis
+"""
+Created by: Kennedy Keyes and Javier Davis (add netIDs!)
 Assignment: Software Testing Group Project
 Course: CSE Methods and Tools in Software Development
 
@@ -24,10 +24,10 @@ def openFile(filename):
 ## (Data Types used: floats/boolean/complex numbers/strings -> no .txt file type)
 ## Note: I think boolean converts into objects/bytes that the computer is able to read
 
-@pytest.mark.parametrize("filenames,expected", [("testing.txt", "File opened."), 
+@pytest.mark.parametrize("filenames, expected", [("testing.txt", "File opened."), 
 ("hello.txt", "File opened."), (53.4, "File opened."), (True, "File opened."), 
 (10j, "File opened."), ("testing", "File opened.")])
-def test_openFile_2(capsys, filenames, expected):
+def test_openFile(capsys, filenames, expected):
     openFile(filenames)
 
     captured_stdout, captured_stderr = capsys.readouterr()
@@ -40,7 +40,7 @@ def test_openFile_2(capsys, filenames, expected):
 def numbers(num1, num2):
     return num1 / num2
 
-## numbers test function with 2 distinct tests (math & data type) below:
+## numbers test function with 2 distinct tests (math correctness & data type) below:
 
 ## Math Correctness: the first 2 tests-> 1st passes/2nd fails
 ## Data Types: the last 4 tests-> 3rd passes/4th fails/5th fails/6th passes
@@ -48,7 +48,7 @@ def numbers(num1, num2):
 
 @pytest.mark.parametrize("num1, num2, quotient", [(4, 2, 2), (2, 1, 3), 
 (49, 7, 7), ("six", "three", "two"), (6.1, 2.9, True), (10j, 5, 2j)])
-def test_numbers_4(num1, num2, quotient):
+def test_numbers(num1, num2, quotient):
     assert numbers(num1, num2) == quotient
 
 ##--------------------------------------------------------------------------
