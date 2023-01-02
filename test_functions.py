@@ -61,10 +61,10 @@ def dist(x1, y1, x2, y2):
 
     return dist
 
-## dist test function with 2 distinct tests (math correctness & data type) below:
+## dist test function with 2 distinct tests (data type & math correctness) below:
 
-## Math Correctness: the last 2 tests-> 5th fails/6th passes
 ## Data Types: the first 4 tests-> 1st fails/2nd passes/3rd passes/4th fails
+## Math Correctness: the last 2 tests-> 5th fails/6th passes
 ## (Data Types used: complex numbers/floats & integers/boolean/strings)
 
 @pytest.mark.parametrize("x1, y1, x2, y2, distance", [(10j, 10j, 10j, 10j, 0), (1.0, 1.0, 1, 1, 0.0),
