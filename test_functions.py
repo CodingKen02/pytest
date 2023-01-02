@@ -58,7 +58,7 @@ def test_numbers_4(num1, num2, quotient):
 """
 import math
 
-## COMPLETED -------------------------------------------------------------KK--
+## COMPLETED -------------------------------------------------------------KK
 ## opens a file in read mode
 ## filename received as a parameter
 def openFile(filename):
