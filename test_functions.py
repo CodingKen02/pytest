@@ -10,16 +10,28 @@ import math
 
 ##--------------------------------------------------------------------------
 
+## openFile function below:
+
 def openFile(filename):
     infile = open(filename, "r")
 
     print("File opened.")
 
-def test_openFile(capsys):
-    openFile("testing.txt")
+## openFile test function with 2 distinct tests (file existence & data type) below:
+
+## File Existence: the first 2 tests -> 1st passes/2nd fails
+## Data Types: the last 4 tests -> 3rd fails/4th passes/5th fails/6th fails
+## (Data Types used: floats/boolean/complex numbers/strings -> no .txt file type)
+## Note: I think boolean converts into objects/bytes that the computer is able to read
+
+@pytest.mark.parametrize("filenames,expected", [("testing.txt", "File opened."), 
+("hello.txt", "File opened."), (53.4, "File opened."), (True, "File opened."), 
+(10j, "File opened."), ("testing", "File opened.")])
+def test_openFile_2(capsys, filenames, expected):
+    openFile(filenames)
 
     captured_stdout, captured_stderr = capsys.readouterr()
-    assert captured_stdout.strip() == "File opened."
+    assert captured_stdout.strip() == expected
 
 ##--------------------------------------------------------------------------
 
@@ -53,7 +65,7 @@ def openFile(filename):
 
     print("File opened.")
 
-## COMPLETED ----------------------------------------------------------KK
+## COMPLETED -------------------------------------------------------------KK
 ## takes two numbers and returns
 ## the result of a division
 def numbers(num1, num2):
