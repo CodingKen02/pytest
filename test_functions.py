@@ -67,9 +67,9 @@ def dist(x1, y1, x2, y2):
 ## Math Correctness: the last 2 tests-> 5th fails/6th passes
 ## (Data Types used: complex numbers/floats & integers/boolean/strings)
 
-@pytest.mark.parametrize("x1, y1, x2, y2, distance", [(10j, 10j, 10j, 10j, 0), (1.0, 1.0, 1, 1, 0.0),
-(True, True, True, True, False), ("one", "one", "one", "one", "zero"), (8, 4, 3, 3, 3), 
-(3, 1, 5, 4, 3.6055512754639892931192212674705)])
+@pytest.mark.parametrize("x1, y1, x2, y2, distance", [(10j, 10j, 10j, 10j, 0), 
+(1.0, 1.0, 1, 1, 0.0), (True, True, True, True, False), ("one", "one", "one", "one", "zero"), 
+(8, 4, 3, 3, 3), (3, 1, 5, 4, 3.6055512754639892931192212674705)])
 def test_dist(x1, y1, x2, y2, distance):
     assert dist(x1, y1, x2, y2) == distance
 
