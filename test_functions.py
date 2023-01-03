@@ -43,11 +43,11 @@ def numbers(num1, num2):
 ## numbers test function with 2 distinct tests (math correctness & data type) below:
 
 ## Math Correctness: the first 2 tests-> 1st passes/2nd fails
-## Data Types: the last 4 tests-> 3rd passes/4th fails/5th fails/6th passes
+## Data Types: the last 4 tests-> 3rd passes/4th fails/5th passes/6th passes
 ## (Data Types used: integers/strings/floats & boolean/complex numbers)
 
 @pytest.mark.parametrize("num1, num2, quotient", [(4, 2, 2), (2, 1, 3), 
-(49, 7, 7), ("six", "three", "two"), (6.1, 2.9, True), (10j, 5, 2j)])
+(49, 7, 7), ("six", "three", 2), (6.1, True, 6.1), (10j, 5, 2j)])
 def test_numbers(num1, num2, quotient):
     assert numbers(num1, num2) == quotient
 
@@ -61,17 +61,41 @@ def dist(x1, y1, x2, y2):
 
     return dist
 
-## dist test function with 2 distinct tests (data type & math correctness) below:
+## dist test function with 2 distinct tests (math correctness & data type) below:
 
-## Data Types: the first 4 tests-> 1st fails/2nd passes/3rd passes/4th fails
-## Math Correctness: the last 2 tests-> 5th fails/6th passes
-## (Data Types used: complex numbers/floats & integers/boolean/strings)
+## Math Correctness: the first 2 tests-> 1st fails/2nd passes
+## Data Types: the last 4 tests-> 3rd fails/4th passes/5th passes/6th fails
+## (Data Types used: complex numbers/floats & integers/boolean & integers/strings)
 
-@pytest.mark.parametrize("x1, y1, x2, y2, distance", [(10j, 10j, 10j, 10j, 0), (1.0, 1.0, 1, 1, 0.0),
-(True, True, True, True, False), ("one", "one", "one", "one", "zero"), (8, 4, 3, 3, 3), 
-(3, 1, 5, 4, 3.6055512754639892931192212674705)])
+@pytest.mark.parametrize("x1, y1, x2, y2, distance", [(8, 4, 3, 3, 3), 
+(3, 1, 5, 4, 3.6055512754639892931192212674705), (10j, 10j, 10j, 10j, 0), 
+(1.0, 1.0, 1, 1, 0.0), (True, True, True, True, 0), ("one", "one", "one", "one", 0)])
 def test_dist(x1, y1, x2, y2, distance):
     assert dist(x1, y1, x2, y2) == distance
+
+##--------------------------------------------------------------------------
+
+## isPalindrome function below (a palindrome is a word that is the same backwards & forwards):
+
+def isPalindrome(temp):
+    test = temp[::-1]
+
+    if(test == temp):
+        return True
+
+    else:
+        return False
+
+## isPalindrome test function with 2 distinct tests (palindrome correctness & data type) below:
+
+## Palindrome Correctness: the first 2 tests-> 1st passes/2nd fails
+## Data Types: the last 4 tests-> 3rd fails/4th fails/5th fails/6th fails/7th passes
+## (Data Types used: integer/boolean/complex number/float/string)
+
+@pytest.mark.parametrize("strings, boolean", [("racecar", True), ("anna", False), 
+(5, True), (True, True), (3j, False), (10.3, False), ("cat", False)])
+def test_isPalindrome(strings, boolean):
+    assert isPalindrome(strings) == boolean
 
 ##--------------------------------------------------------------------------
 
@@ -103,6 +127,7 @@ def dist(x1, y1, x2, y2):
 
     return dist
 
+## COMPLETED -------------------------------------------------------------KK
 ## takes in a string -- reverses it
 ## then compares the two
 def isPalindrome(temp):
