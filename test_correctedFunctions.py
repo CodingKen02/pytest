@@ -19,10 +19,10 @@ def openFile(filename):
         print("File opened.")
 
     except TypeError:
-        print("Sorry, not a valid data type")
+        print("Sorry, please try to enter a string.")
 
     except:
-        print("No file or file type exists")
+        print("No file or file type exists.")
 
 
 ## openFile test function with 2 distinct tests (file existence & data type) below:
@@ -55,14 +55,24 @@ def test_numbers(num1, num2, quotient):
     assert numbers(num1, num2) == quotient
 
 ##--------------------------------------------------------------------------
-
-## dist function below:
+"""
+## dist function below: IDK YET!!!
 
 def dist(x1, y1, x2, y2):
-    dist = (x2 - x1) ** 2 + (y2 - y1) ** 2
-    dist = math.sqrt(dist)
+    try:
+        dist = (x2 - x1) ** 2 + (y2 - y1) ** 2
+        dist = math.sqrt(dist)
 
-    return dist
+        return dist
+
+    except TypeError:
+        print("Sorry, please try to enter a numeric value.")
+
+    except AssertionError:
+        print("Mathematically incorrect.")
+
+    except:
+        print("An error has occured.")
 
 ## dist test function with 2 distinct tests (math correctness & data type) below:
 
@@ -77,7 +87,7 @@ def test_dist(x1, y1, x2, y2, distance):
     assert dist(x1, y1, x2, y2) == distance
 
 ##--------------------------------------------------------------------------
-
+"""
 ## isPalindrome function below (a palindrome is a word that is the same backwards & forwards):
 
 def isPalindrome(temp):
