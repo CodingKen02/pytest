@@ -2,6 +2,7 @@
 Created by: Kennedy Keyes and Javier Davis (add netIDs!)
 Assignment: Software Testing Group Project
 Course: CSE Methods and Tools in Software Development
+Program: Creation of test functions
 
 """
 
@@ -47,7 +48,7 @@ def numbers(num1, num2):
 ## (Data Types used: integers/strings/floats & boolean/complex numbers)
 
 @pytest.mark.parametrize("num1, num2, quotient", [(4, 2, 2), (2, 1, 3), 
-(49, 7, 7), ("six", "three", 2), (6.1, True, 6.1), (10j, 5, 2j)])
+(49, 7, 7), ("6", "3", 2), (6.1, True, 6.1), (10j, 5, 2j)])
 def test_numbers(num1, num2, quotient):
     assert numbers(num1, num2) == quotient
 
@@ -69,7 +70,7 @@ def dist(x1, y1, x2, y2):
 
 @pytest.mark.parametrize("x1, y1, x2, y2, distance", [(8, 4, 3, 3, 3), 
 (3, 1, 5, 4, 3.6055512754639892931192212674705), (10j, 10j, 10j, 10j, 0), 
-(1.0, 1.0, 1, 1, 0.0), (True, True, True, True, 0), ("one", "one", "one", "one", 0)])
+(1.0, 1.0, 1, 1, 0.0), (True, True, True, True, 0), ("1", "1", "1", "1", 0)])
 def test_dist(x1, y1, x2, y2, distance):
     assert dist(x1, y1, x2, y2) == distance
 
@@ -93,13 +94,13 @@ def isPalindrome(temp):
 ## (Data Types used: integer/boolean/complex number/float/string)
 
 @pytest.mark.parametrize("strings, boolean", [("racecar", True), ("anna", False), 
-(5, True), (True, True), (3j, False), (10.3, False), ("cat", False)])
+("101", True), (True, True), (3j, False), (10.3, False), ("cat", False)])
 def test_isPalindrome(strings, boolean):
     assert isPalindrome(strings) == boolean
 
 ##--------------------------------------------------------------------------
 
-## below are the functions to test
+## below are the given functions to test
 
 """
 import math
