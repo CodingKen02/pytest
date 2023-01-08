@@ -292,7 +292,7 @@ def test_displayItem6(capsys):
     index = iter([2])
     assert displayItem == "Your item at 2 index is 6"
 
-##-------------------------------------------------------------------------- STOP CORRECTING JD!
+##--------------------------------------------------------------------------
 
 ## below are the given functions to test
 
