@@ -119,17 +119,20 @@ def test_isPalindrome(strings, boolean):
     assert isPalindrome(strings) == boolean
 
 
-##-------------------------------------------------------------------------- START CORRECTING BELOW JD:
-"""
-## divide function below: -> CORRECT THIS FUNTION WITH TRY/EXCEPT BLOCKS THEN REMOVE QUOTATIONS WITHIN EACH FUNCTION TO START TEST
+##--------------------------------------------------------------------------
+
+## divide correction function below:
 
 def divide():
-    num1 = int(input("Enter a number: "))
-    num2 = int(input("Enter another number: "))
+    try:
+        num1 = int(input("Enter a number: "))
+        num2 = int(input("Enter another number: "))
 
-    div = num1 / num2
+        div = num1 / num2
 
-    print("Your numbers divided is:", div)
+        print("Your numbers divided is:", div)
+    except:
+        print("\n An error has occurred")
 
 ## divide test function with 2 distinct tests (math correctness & data type) below:
 
@@ -141,7 +144,6 @@ def test_divide():
     num1 = iter([2])
     num2 = iter([2])
     assert divide == 3
-
 
 def test_divide2():
     num1 = iter([50])
@@ -167,13 +169,18 @@ def test_divide5():
     num1 = iter([7])
     num2 = iter([7])
     assert divide == 1
-"""
-##--------------------------------------------------------------------------
-"""
-## sq function below: -> CORRECT THIS FUNTION WITH TRY/EXCEPT BLOCKS THEN REMOVE QUOTATIONS WITHIN EACH FUNCTION TO START TEST
 
-def sq(num):
-    return math.sqrt(num)
+##--------------------------------------------------------------------------
+
+## sq correction function below:
+
+def sq(num):    
+    try:
+        return math.sqrt(num)
+    except TypeError:
+        print("\nYou used a string!")   
+    except:
+        print("\nAn error has occurred")
 
 ## sq test function with 2 distinct tests (math correctness & data type) below:
 
@@ -198,15 +205,18 @@ def test_sq5():
 
 def test_sq6():
     assert sq(36) == 6
-"""
+
 ##--------------------------------------------------------------------------
-"""
-## greetUser function below:  -> CORRECT THIS FUNTION WITH TRY/EXCEPT BLOCKS THEN REMOVE QUOTATIONS WITHIN EACH FUNCTION TO START TEST
+
+## greetUser correction function below:
 
 def greetUser(first, middle, last):
-    print("Hello!")
-    print("Welcome to the program", first, middle, last)
-    print("Glad to have you!")
+    try:
+        print("Hello!")
+        print("Welcome to the program", first, middle, last)
+        print("Glad to have you!")
+    except:
+        print("\n An error has occurred!")
 
 ## greetUser test function with 1 distinct test (data/input correctness) below:
 
@@ -235,13 +245,16 @@ def test_greetUser6(capsys):
     middle = (["Ivan"])
     last =  (["Davis"])
     assert greetUser == "Glad to have you!"
-"""
+
 ##--------------------------------------------------------------------------
-"""
-## displayItem function below:  -> CORRECT THIS FUNTION WITH TRY/EXCEPT BLOCKS THEN REMOVE QUOTATIONS WITHIN EACH FUNCTION TO START TEST
+
+## displayItem correction function below:
 
 def displayItem(numbers, index):
-    print("Your item at", index, "index is", numbers[index]) 
+    try:
+        print("Your item at", index, "index is", numbers[index])
+    except:
+        print("\n An error has occurred!")
 
 ## displayItem test function with 2 distinct tests (order correctness & data type) below:
 
@@ -278,7 +291,7 @@ def test_displayItem6(capsys):
     numbers = iter([1, 2, 3, 4, 5, 6])
     index = iter([2])
     assert displayItem == "Your item at 2 index is 6"
-"""
+
 ##-------------------------------------------------------------------------- STOP CORRECTING JD!
 
 ## below are the given functions to test
@@ -321,6 +334,7 @@ def isPalindrome(temp):
     else:
         return False
 
+## COMPLETED -------------------------------------------------------------JD
 ## has input to receive two numbers
 ## divides the two, then outputs the result
 def divide():
@@ -331,10 +345,12 @@ def divide():
 
     print("Your numbers divided is:", div)
 
+## COMPLETED -------------------------------------------------------------JD
 ## returns the squareroot of a particular number
 def sq(num):
     return math.sqrt(num)
 
+## COMPLETED -------------------------------------------------------------JD
 ## grabs user's name
 ## greets them by their entire name
 ## names should be strings that only accept letters! (A-Z, a-z)
@@ -343,6 +359,7 @@ def greetUser(first, middle, last):
     print("Welcome to the program", first, middle, last)
     print("Glad to have you!")
 
+## COMPLETED -------------------------------------------------------------JD
 ## takes in a Python list
 ## attempts to display the item at the index provided
 def displayItem(numbers, index):

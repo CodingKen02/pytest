@@ -121,7 +121,6 @@ def test_divide():
     num2 = iter([2])
     assert divide == 3
 
-
 def test_divide2():
     num1 = iter([50])
     num2 = iter([2])
