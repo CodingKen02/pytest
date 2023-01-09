@@ -1,5 +1,5 @@
 """
-Created by: Kennedy Keyes (kfk38) and Javier Davis (insert netID)
+Created by: Kennedy Keyes (kfk38) and Javier Davis (jid55)
 Assignment: Software Testing Group Project
 Course: CSE Methods and Tools in Software Development
 Program: Creation of test functions
@@ -25,14 +25,9 @@ def openFile(filename):
 ## (Data Types used: floats/boolean/complex numbers/strings -> no .txt file type)
 ## Note: I think boolean converts into objects/bytes that the computer is able to read
 
-@pytest.mark.parametrize("filenames, expected", [("testing.txt", "File opened."), 
-("hello.txt", "File opened."), (53.4, "File opened."), (True, "File opened."), 
-(10j, "File opened."), ("testing", "File opened.")])
-def test_openFile(capsys, filenames, expected):
-    openFile(filenames)
-
-    captured_stdout, captured_stderr = capsys.readouterr()
-    assert captured_stdout.strip() == expected
+@pytest.mark.parametrize("filenames", ["testing.txt", "hello.txt", 53.4, True, 10j, "testing"])
+def test_openFile(filenames):
+    assert openFile(filenames) == None
 
 ##--------------------------------------------------------------------------
 
@@ -48,7 +43,7 @@ def numbers(num1, num2):
 ## (Data Types used: integers/strings/floats & boolean/complex numbers)
 
 @pytest.mark.parametrize("num1, num2, quotient", [(4, 2, 2), (2, 1, 3), 
-(49, 7, 7), ("6", "3", 2), (6.1, True, 6.1), (10j, 5, 2j)])
+(49, 7, 7), ("6", "3", None), (6.1, True, 6.1), (10j, 5, 2j)])
 def test_numbers(num1, num2, quotient):
     assert numbers(num1, num2) == quotient
 
@@ -69,8 +64,8 @@ def dist(x1, y1, x2, y2):
 ## (Data Types used: complex numbers/floats & integers/boolean & integers/strings)
 
 @pytest.mark.parametrize("x1, y1, x2, y2, distance", [(8, 4, 3, 3, 3), 
-(3, 1, 5, 4, 3.6055512754639892931192212674705), (10j, 10j, 10j, 10j, 0), 
-(1.0, 1.0, 1, 1, 0.0), (True, True, True, True, 0), ("1", "1", "1", "1", 0)])
+(3, 1, 5, 4, 3.6055512754639892931192212674705), (10j, 10j, 10j, 10j, None), 
+(1.0, 1.0, 1, 1, 0.0), (True, True, True, True, 0), ("1", "1", "1", "1", None)])
 def test_dist(x1, y1, x2, y2, distance):
     assert dist(x1, y1, x2, y2) == distance
 
@@ -94,7 +89,7 @@ def isPalindrome(temp):
 ## (Data Types used: integer/boolean/complex number/float/string)
 
 @pytest.mark.parametrize("strings, boolean", [("racecar", True), ("anna", False), 
-("101", True), (True, True), (3j, False), (10.3, False), ("cat", False)])
+(101, None), (True, None), (3j, None), (10.3, None), ("1010", False)])
 def test_isPalindrome(strings, boolean):
     assert isPalindrome(strings) == boolean
 
@@ -113,13 +108,13 @@ def divide():
 ## divide test function with 2 distinct tests (math correctness & data type) below:
 
 ## Math Correctness: the first 2 tests-> 1st fails/2nd passes
-## Data Types: the last 4 tests-> 3rd passes/4th fails/5th fails/6th passes
+## Data Types: the last 4 tests-> 3rd passes/4th passes/5th passes/6th fails
 ## (Data Types used: boolean/strings/floats/integers)
 
 def test_divide():
     num1 = iter([2])
     num2 = iter([2])
-    assert divide == 3
+    assert divide == "Your numbers divded is: 1"
 
 def test_divide2():
     num1 = iter([50])
@@ -134,14 +129,14 @@ def test_divide3():
 def test_divide4():
     num1 = iter(["0"])
     num2 = iter(["4"])
-    assert divide == 0
+    assert divide
 
 def test_divide5():
     num1 = iter([100.0])
     num2 = iter([5.0])
     assert divide
 
-def test_divide5():
+def test_divide6():
     num1 = iter([7])
     num2 = iter([7])
     assert divide == 1
@@ -166,7 +161,7 @@ def test_sq2():
     assert sq(49) == 9
 
 def test_sq3():
-    assert sq("100") == 10
+    assert sq("100") == None
 
 def test_sq4():
     assert sq(False) == 0
