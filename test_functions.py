@@ -1,5 +1,5 @@
 """
-Created by: Kennedy Keyes (kfk38) and Javier Davis (jid55)
+Created by: Kennedy Keyes and Javier Davis
 Assignment: Software Testing Group Project
 Course: CSE Methods and Tools in Software Development
 Program: Creation of test functions

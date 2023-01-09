@@ -1,6 +1,8 @@
 Methods and Tools in SW Development 
 Unit Testing with Python by Kennedy Keyes & Javier Davis
-(Partner has not completed his part yet- the last 4 functions)
+
+
+
 
 Function Name: openFile
 Number of tests: 6 tests
@@ -15,11 +17,13 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Kennedy Keyes, inserted a try/except block, so the function could pass by printing out statements for files that were not found and inputs that had data type errors (“Sorry, please try to enter a string,” and “No file or file type exists”). These changes were made, so ideally the items to test could all pass. File existence tests were all passed after corrections because the exception statement printed “No file or file type exists” instead of immediately failing like previously. Data Type Conversion tests were all passed after corrections because of the exception statement printed “Sorry, please try to enter a string” when there was a Type Error (invalid data type inserted) instead of immediately failing like before. Also, to note, the string value “testing” was passed too because of the lack of file type (so no existing file).
+I, Kennedy Keyes, inserted a try/except block, so the function could pass by printing out statements for files that were not found and inputs that had data type errors (“Sorry, please try to enter a string,” and “No file or file type exists”). These changes were made, so ideally the items to test could all pass. File existence tests were all passed after corrections because the exception statement printed “No file or file type exists” instead of immediately failing like previously. Data Type Conversion tests were all passed after corrections because of the exception statement printed “Sorry, please try to enter a string” when there was a Type Error (invalid data type inserted) instead of immediately failing like before. Also, to note, the string value “testing” was passed afterwards too because of the lack of file type (so no existing file).
 
 Failed tests:
 
-The tests that were meant to fail were: “hello.txt” and all the Data Type Conversion inputs (53.4, True, 10j, and “testing”. They were ALL fixed by exception statements, so their tests now pass. However, that doesn’t mean they are all correct values. They just allow the computer to return statements to the user. That right there makes the function process instead of crashing. Also, to note, the Boolean, True, had an interesting outcome. I think the computer processed the Boolean as an object or byte, so it continued as a filename and passed the test before and after corrections. That was not ideally, but it makes some sense to me.
+The tests that were meant to fail were: “hello.txt” and all the Data Type Conversion inputs (53.4, True, 10j, and “testing”). They were ALL fixed by exception statements, so their tests now pass. However, that doesn’t mean they are all correct values. They just allow the computer to return statements to the user. That right there makes the function process instead of crashing. Also, to note, the Boolean, True, had an interesting outcome. I think the computer processed the Boolean as an object or byte, so it continued as a filename and passed the test before and after corrections. That was not ideally, but it makes some sense to me.
+
+
 
 Tests passed before corrections: 2
 Tests failed before corrections: 4
@@ -49,6 +53,8 @@ Failed tests:
 
 The tests that were meant to fail were: (2, 1, 3) and (“6”, “3”, None). One was not fixed after corrections because I purposely wanted it to fail by assertion (that is [2, 1, 3]). The (“6” / “3” = None) test passed by a try/except block, that was also setting the strings to None. However, it was nice to see how the computer handled the strings (strings are not being read or used in this math expression). And it was nice to see the complex numbers work as the computer was searching for 2j. Just as I expected.
 
+
+
 Tests passed before corrections: 4
 Tests failed before corrections: 2
 
@@ -71,11 +77,13 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Kennedy Keyes, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a real number.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Math Correctness tests were halfway passed before and after corrections (I asserted [3 = (8 – 4) ^2 + (3 – 3) ^2], which is mathematically incorrect). Data Type Conversion tests were 100% passed after corrections. I asserted [None = (10j – 10j) ^2 + (10j – 10j) ^2], which failed originally because complex numbers are not real numbers. I also asserted [None = (“1” – “1”) ^2 + (“1” – “1”) ^2], which failed originally because strings/words are not real numbers. All the other data types were handled properly though, even Boolean types (True = 1 / False = 0). Inserting the try/except block allowed the strings and complex numbers to pass the test by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion).
+I, Kennedy Keyes, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a real number.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Math Correctness tests were halfway passed before and after corrections (I asserted [3 = (8 – 4) ^2 + (3 – 3) ^2], which is mathematically incorrect). Data Type Conversion tests were 100% passed after corrections. I asserted [None = (10j – 10j) ^2 + (10j – 10j) ^2], which failed originally because complex numbers are not real numbers. I also asserted [None = (“1” – “1”) ^2 + (“1” – “1”) ^2], which failed originally because strings/words are not real numbers. All the other data types were handled properly though, even Boolean types (because True = 1 / False = 0). Inserting the try/except block allowed the strings and complex numbers to pass the test by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion).
 
 Failed tests:
 
 The tests that were meant to fail were: (8, 4, 3, 3, 3), (10j, 10j, 10j, 10j, None), and (“1”, “1”, “1”, “1”, None). One was not fixed after corrections because I purposely wanted it to fail by assertion (that is [8, 4, 3, 3, 3]). The other tests passed by a try/except block, that was also setting the strings and complex numbers to None. It was interesting to see how the complex numbers were handled because of their numeric value type (not being a real number).
+
+
 
 Tests passed before corrections: 3
 Tests failed before corrections: 3
@@ -99,11 +107,13 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Kennedy Keyes, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a string.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Palindrome Correctness tests were halfway passed before and after corrections (I asserted “anna” = False, which is incorrect- “anna” is a palindrome). The computer would have returned True, but I inserted False and caused an Assertion Error. Data Type Conversion tests were 100% passed after corrections. I asserted 101, True, 3j, and 10.3 to None, which failed originally because of their non-string value. The string data type was handled properly, even though it contained numeric values within (“1010”). Inserting the try/except block allowed the non-string data types to pass by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion).
+I, Kennedy Keyes, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a string.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Palindrome Correctness tests were halfway passed before and after corrections (I asserted “anna” = False, which is incorrect- “anna” is a palindrome). The computer would have returned True, but I inserted False and caused an Assertion Error (True != False). Data Type Conversion tests were 100% passed after corrections. I asserted 101, True, 3j, and 10.3 to None, which failed originally because of their non-string value. The string data type was handled properly, even though it contained numeric values within (“1010”). Inserting the try/except block allowed the non-string data types to pass by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion).
 
 Failed tests:
 
 The tests that were meant to fail were: (“anna”, False), (101, None), (True, None), (3j, None), and (10.3, None). One was not fixed after corrections because I purposely wanted it to fail by assertion (that is [“anna” = False]). The other tests passed by a try/except block, that was also setting the numeric data types to None. It was interesting to see that 101 didn’t work just because it’s an integer, even though the number is a palindrome. 
+
+
 
 Tests passed before corrections: 2
 Tests failed before corrections: 5
@@ -114,126 +124,120 @@ Tests failed after corrections: 1
 
 
 
-Function Name: function name
-Number of tests: number of tests
+Function Name: divide
+Number of tests: 6 tests
 
 Items to test:
-●	Item 1
-●	Item 2
-●	Item 3
-○	List conceptually what you’re testing. Are you testing that output works correctly? Correct math? Data type conversion? Etc.
+●	Math Correctness
+●	Data Type Conversion
 
 Inputs used for testing:
-●	Input 1, input 2
-●	…
-○	Given your items to test above, what values did you use to actually test those things
+●	(2, 2), (50, 2)
+●	(True, True), (“0”, ”4”), (100.0, 5.0), (7,7)
 
 Corrections made: 
 
-In paragraph form, discuss what changes were made to the function and discuss why they were made. Reference specific tests from the “items to test” section to list what failed previously and how these changes prevented failures.
+I, Javier Davis inserted a try/except block, so the function could pass all the tests by printing out the statement, “An error has occurred.” Still, I have it so some tests will fail only with an assertion error which are errors that are made by human mistakes, not the computer, so with test_divide, there is an assertion error with output of the statement. As well as for test_divide6, which it is equal to one, but assertion error is being outputted. Test_divide4 was intended to fail, but still passed before and after.
 
 Failed tests:
 
-What tests were meant to originally fail? How did you fix these?
-
-Tests passed before corrections: number
-Tests failed before corrections: number
-
-Tests passed after corrections: number
-Tests failed after corrections: number
+Test_divide 1 and 6 are meant to fail due to assertion. With test_divide1, it was supposed to fail with the assertion error because something invalid was typed afterwards. As for test_divide6, it failed due to the same reason.
 
 
 
+Tests passed before corrections: 4
+Tests failed before corrections: 2
 
-Function Name: function name
-Number of tests: number of tests
+Tests passed after corrections: 4
+Tests failed after corrections: 2
+
+
+
+
+Function Name: sq
+Number of tests: 6
 
 Items to test:
-●	Item 1
-●	Item 2
-●	Item 3
-○	List conceptually what you’re testing. Are you testing that output works correctly? Correct math? Data type conversion? Etc.
+●	Math Correctness
+●	Data Type Correctness
 
 Inputs used for testing:
-●	Input 1, input 2
-●	…
-○	Given your items to test above, what values did you use to actually test those things
+●	(49, 7), (49, 9)
+●	(“100”, None), (False, 0), (144.0, 12.0) (36, 6)
 
 Corrections made: 
 
-In paragraph form, discuss what changes were made to the function and discuss why they were made. Reference specific tests from the “items to test” section to list what failed previously and how these changes prevented failures.
+I, Javier Davis, did the method for the test_sq. There were some tests that were made to fail, but I used a try\except block to give the user knowledge to fix such test. Allowing the user to fix those mistakes, I also corrected test 3 so it will pass. Previously, it failed by data type and math errors.
 
 Failed tests:
 
-What tests were meant to originally fail? How did you fix these?
-
-Tests passed before corrections: number
-Tests failed before corrections: number
-
-Tests passed after corrections: number
-Tests failed after corrections: number
+Test 2 and 3 was all meant to fail. I corrected 3 by using a try\except block to help with recognizing the errors to make it an easy fix. Test 2 failed because of math/assertion error: sq of 49 is 7 not 9.
 
 
 
+Tests passed before corrections: 4
+Tests failed before corrections: 2
 
-Function Name: function name
-Number of tests: number of tests
+Tests passed after corrections: 5
+Tests failed after corrections: 1
+
+
+
+
+Function Name: greetUser
+Number of tests: 6
 
 Items to test:
-●	Item 1
-●	Item 2
-●	Item 3
-○	List conceptually what you’re testing. Are you testing that output works correctly? Correct math? Data type conversion? Etc.
+●	Data/Input Correctness
 
 Inputs used for testing:
-●	Input 1, input 2
-●	…
-○	Given your items to test above, what values did you use to actually test those things
+●	(“Javier”, “Ivan”, “Davis”), (“Javier”, “Ivan”, “Davis”), (“N1yana”,” Ama!ya”,” C0hran”), (“Jayce”, “King”, “Davis”), (“Javier”, “1van”, “Davis”), (“Javier”, “Ivan”, “Davis”) 
 
 Corrections made: 
 
-In paragraph form, discuss what changes were made to the function and discuss why they were made. Reference specific tests from the “items to test” section to list what failed previously and how these changes prevented failures.
+I, Javier Davis, made some of the input invalid and data type wrong so I could use a try\except block to make them correct. After the corrections, only one test still failed and that was test_greetUser6 (assertion error). No matter the input, nothing really failed or changed like instructor mentioned.
 
 Failed tests:
 
-What tests were meant to originally fail? How did you fix these?
-
-Tests passed before corrections: number
-Tests failed before corrections: number
-
-Tests passed after corrections: number
-Tests failed after corrections: number
+Only 1 was meant to fail after corrections. It was test 6 because of assertion. Test 3 and 4 was an attempt to fail due to numbers in the strings. Even regular numeric values didn’t work. 
 
 
 
+Tests passed before corrections: 5
+Tests failed before corrections: 1
 
-Function Name: function name
-Number of tests: number of tests
+Tests passed after corrections: 5
+Tests failed after corrections: 1
+
+
+
+
+Function Name: displayItem
+Number of tests: 6
 
 Items to test:
-●	Item 1
-●	Item 2
-●	Item 3
-○	List conceptually what you’re testing. Are you testing that output works correctly? Correct math? Data type conversion? Etc.
+●	Order Correctness
+●	Data Type Conversion
 
 Inputs used for testing:
-●	Input 1, input 2
-●	…
-○	Given your items to test above, what values did you use to actually test those things
+●	[(1, 2, 3, 4, 5, 6), (5)], [(32, 43, 96, 674, 35, 36), (16)], [(1, 2, 3, 4, 5, 6), (2)]
+●	[(12, 23, 36, 44, 25, 56.3), (6.0)], [("s", 23, 36, 44, 25, 22), (“b”)], [(12, 23, 36, 44, 25, 56, 60), (True)]
 
 Corrections made: 
 
-In paragraph form, discuss what changes were made to the function and discuss why they were made. Reference specific tests from the “items to test” section to list what failed previously and how these changes prevented failures.
+For test 6, it fails by an assertion error. Tests 3, 4, and 5 were testing if data types will crash the function or not. Test 2 was testing what the function would do with an index number out of range/bound. I inserted a try/except block though in case the functions were still failing behind the scenes.
 
 Failed tests:
 
-What tests were meant to originally fail? How did you fix these?
+At the beginning of the testing period, tests 3, 4, and 5 were intended to fail, but bypassed any computer errors. Also 6 failed by an assertion error. Test 5 makes sense because True is equivalent to 1, so it took that input.
 
-Tests passed before corrections: number
-Tests failed before corrections: number
 
-Tests passed after corrections: number
-Tests failed after corrections: number
+
+Tests passed before corrections: 5
+Tests failed before corrections: 1
+
+Tests passed after corrections: 5
+Tests failed after corrections: 1
 
 
 
@@ -242,7 +246,7 @@ Reflection
 
 1. Who was assigned what testing functions to work on?
 
-I, Kennedy Keyes, assigned the test functions by splitting the workload into 2 parts (I did the first 4 and Javier did the last 4 functions – which means a minimum of 20 tests and 4 try/except blocks per person). 
+I, Kennedy Keyes, assigned the test functions by splitting the workload into 2 parts (I did the first 4 and Javier Davis did the last 4 functions – which means a minimum of 20 tests and 4 try/except blocks per person). 
 
 2. Is there anything testing wise you feel was lacking? Is it due to lack of tools, etc? 
 
