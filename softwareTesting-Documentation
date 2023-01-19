@@ -1,5 +1,5 @@
 Methods and Tools in SW Development 
-Unit Testing with Python by Kennedy Keyes & Javier Davis
+Unit Testing with Python by Kennedy & Javier
 
 
 
@@ -17,7 +17,7 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Kennedy Keyes, inserted a try/except block, so the function could pass by printing out statements for files that were not found and inputs that had data type errors (“Sorry, please try to enter a string,” and “No file or file type exists”). These changes were made, so ideally the items to test could all pass. File existence tests were all passed after corrections because the exception statement printed “No file or file type exists” instead of immediately failing like previously. Data Type Conversion tests were all passed after corrections because of the exception statement printed “Sorry, please try to enter a string” when there was a Type Error (invalid data type inserted) instead of immediately failing like before. Also, to note, the string value “testing” was passed afterwards too because of the lack of file type (so no existing file).
+I, Kennedy, inserted a try/except block, so the function could pass by printing out statements for files that were not found and inputs that had data type errors (“Sorry, please try to enter a string,” and “No file or file type exists”). These changes were made, so ideally the items to test could all pass. File existence tests were all passed after corrections because the exception statement printed “No file or file type exists” instead of immediately failing like previously. Data Type Conversion tests were all passed after corrections because of the exception statement printed “Sorry, please try to enter a string” when there was a Type Error (invalid data type inserted) instead of immediately failing like before. Also, to note, the string value “testing” was passed afterwards too because of the lack of file type (so no existing file).
 
 Failed tests:
 
@@ -47,7 +47,7 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Kennedy Keyes, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a numeric data type.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Math Correctness tests were halfway passed before and after corrections (I asserted 2 / 1 = 3, which is mathematically incorrect). Data Type Conversion tests were 100% passed after corrections. I asserted “6” / “3” = None, which failed originally because the computer would not read the strings as numeric data types. All the other data types were handled properly though, even the complex numbers. Inserting the try/except block allowed the strings to pass the test by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion). 
+I, Kennedy, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a numeric data type.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Math Correctness tests were halfway passed before and after corrections (I asserted 2 / 1 = 3, which is mathematically incorrect). Data Type Conversion tests were 100% passed after corrections. I asserted “6” / “3” = None, which failed originally because the computer would not read the strings as numeric data types. All the other data types were handled properly though, even the complex numbers. Inserting the try/except block allowed the strings to pass the test by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion). 
 
 Failed tests:
 
@@ -77,7 +77,7 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Kennedy Keyes, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a real number.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Math Correctness tests were halfway passed before and after corrections (I asserted [3 = (8 – 4) ^2 + (3 – 3) ^2], which is mathematically incorrect). Data Type Conversion tests were 100% passed after corrections. I asserted [None = (10j – 10j) ^2 + (10j – 10j) ^2], which failed originally because complex numbers are not real numbers. I also asserted [None = (“1” – “1”) ^2 + (“1” – “1”) ^2], which failed originally because strings/words are not real numbers. All the other data types were handled properly though, even Boolean types (because True = 1 / False = 0). Inserting the try/except block allowed the strings and complex numbers to pass the test by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion).
+I, Kennedy, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a real number.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Math Correctness tests were halfway passed before and after corrections (I asserted [3 = (8 – 4) ^2 + (3 – 3) ^2], which is mathematically incorrect). Data Type Conversion tests were 100% passed after corrections. I asserted [None = (10j – 10j) ^2 + (10j – 10j) ^2], which failed originally because complex numbers are not real numbers. I also asserted [None = (“1” – “1”) ^2 + (“1” – “1”) ^2], which failed originally because strings/words are not real numbers. All the other data types were handled properly though, even Boolean types (because True = 1 / False = 0). Inserting the try/except block allowed the strings and complex numbers to pass the test by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion).
 
 Failed tests:
 
@@ -107,7 +107,7 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Kennedy Keyes, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a string.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Palindrome Correctness tests were halfway passed before and after corrections (I asserted “anna” = False, which is incorrect- “anna” is a palindrome). The computer would have returned True, but I inserted False and caused an Assertion Error (True != False). Data Type Conversion tests were 100% passed after corrections. I asserted 101, True, 3j, and 10.3 to None, which failed originally because of their non-string value. The string data type was handled properly, even though it contained numeric values within (“1010”). Inserting the try/except block allowed the non-string data types to pass by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion).
+I, Kennedy, inserted a try/except block, so the function could pass all the tests by printing out one of the statements, “An error has occurred,” or “Sorry, please enter a string.” However, I asserted values as the expected output, which makes ONE test function still fail after correcting. Palindrome Correctness tests were halfway passed before and after corrections (I asserted “anna” = False, which is incorrect- “anna” is a palindrome). The computer would have returned True, but I inserted False and caused an Assertion Error (True != False). Data Type Conversion tests were 100% passed after corrections. I asserted 101, True, 3j, and 10.3 to None, which failed originally because of their non-string value. The string data type was handled properly, even though it contained numeric values within (“1010”). Inserting the try/except block allowed the non-string data types to pass by printing one of the statements and setting the invalid data types to None (no expected outcome, equivalence, or conversion).
 
 Failed tests:
 
@@ -137,7 +137,7 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Javier Davis inserted a try/except block, so the function could pass all the tests by printing out the statement, “An error has occurred.” Still, I have it so some tests will fail only with an assertion error which are errors that are made by human mistakes, not the computer, so with test_divide, there is an assertion error with output of the statement. As well as for test_divide6, which it is equal to one, but assertion error is being outputted. Test_divide4 was intended to fail, but still passed before and after.
+I, Javier, inserted a try/except block, so the function could pass all the tests by printing out the statement, “An error has occurred.” Still, I have it so some tests will fail only with an assertion error which are errors that are made by human mistakes, not the computer, so with test_divide, there is an assertion error with output of the statement. As well as for test_divide6, which it is equal to one, but assertion error is being outputted. Test_divide4 was intended to fail, but still passed before and after.
 
 Failed tests:
 
@@ -167,7 +167,7 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Javier Davis, did the method for the test_sq. There were some tests that were made to fail, but I used a try\except block to give the user knowledge to fix such test. Allowing the user to fix those mistakes, I also corrected test 3 so it will pass. Previously, it failed by data type and math errors.
+I, Javier, did the method for the test_sq. There were some tests that were made to fail, but I used a try\except block to give the user knowledge to fix such test. Allowing the user to fix those mistakes, I also corrected test 3 so it will pass. Previously, it failed by data type and math errors.
 
 Failed tests:
 
@@ -195,7 +195,7 @@ Inputs used for testing:
 
 Corrections made: 
 
-I, Javier Davis, made some of the input invalid and data type wrong so I could use a try\except block to make them correct. After the corrections, only one test still failed and that was test_greetUser6 (assertion error). No matter the input, nothing really failed or changed like instructor mentioned.
+I, Javier, made some of the input invalid and data type wrong so I could use a try\except block to make them correct. After the corrections, only one test still failed and that was test_greetUser6 (assertion error). No matter the input, nothing really failed or changed like instructor mentioned.
 
 Failed tests:
 
@@ -246,12 +246,12 @@ Reflection
 
 1. Who was assigned what testing functions to work on?
 
-I, Kennedy Keyes, assigned the test functions by splitting the workload into 2 parts (I did the first 4 and Javier Davis did the last 4 functions – which means a minimum of 20 tests and 4 try/except blocks per person). 
+I, Kennedy, assigned the test functions by splitting the workload into 2 parts (I did the first 4 and Javier did the last 4 functions – which means a minimum of 20 tests and 4 try/except blocks per person). 
 
 2. Is there anything testing wise you feel was lacking? Is it due to lack of tools, etc? 
 
-No, not really. Maybe more interaction with PyTest like taking user input from the terminal, but it honestly accomplishes the needs of testing for me. My partner, Javier Davis, wished that more resources were given to help with the testing though.
+No, not really. Maybe more interaction with PyTest like taking user input from the terminal, but it honestly accomplishes the needs of testing for me. My partner, Javier, wished that more resources were given to help with the testing though.
 
 3. After the assignment, do you feel that unit testing is important? Why or why not?
 
-Yes, we both do. It seems very helpful if, let’s say, a company had a team to test functions before the launch of an application. It’s great to make sure users are having a great experience dealing with your software and that your software can handle any input in a respectful, user-friendly manner. So, unit testing seems great, but can become tedious, especially dealing with different error types. It’s kind of fun too. My partner, Javier Davis, agrees as well. He believes it’s important in case of future career situations where it’s needed. And that all of this gave us some basic knowledge of unit testing.
+Yes, we both do. It seems very helpful if, let’s say, a company had a team to test functions before the launch of an application. It’s great to make sure users are having a great experience dealing with your software and that your software can handle any input in a respectful, user-friendly manner. So, unit testing seems great, but can become tedious, especially dealing with different error types. It’s kind of fun too. My partner, Javier, agrees as well. He believes it’s important in case of future career situations where it’s needed. And that all of this gave us some basic knowledge of unit testing.
