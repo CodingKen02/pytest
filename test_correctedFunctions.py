@@ -1,7 +1,6 @@
 """
-Created by: Kennedy Keyes and Javier Davis
-Assignment: Software Testing Group Project
-Course: CSE Methods and Tools in Software Development
+Created by: Kennedy and Javier
+Assignment: Software Testing
 Program: Corrections for test functions (some are intended to still fail)
 
 """
