@@ -2,6 +2,5 @@
 
 Created by: Kennedy and Javier
 
-Assignment: Software Testing Group Project
+Assignment: Software Testing
 
-Course: CSE Methods and Tools in Software Development
