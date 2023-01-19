@@ -1,6 +1,6 @@
 # pytest
 
-Created by: Kennedy Keyes and Javier Davis
+Created by: Kennedy and Javier
 
 Assignment: Software Testing Group Project
 
